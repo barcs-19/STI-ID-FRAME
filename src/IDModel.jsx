@@ -28,8 +28,8 @@ const IDModel = () => {
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
 
   const [schoolYear, setSchoolYear] = useState({
-    startYear: 2025,
-    endYear: 2026,
+    startYear: 2026,
+    endYear: 2027,
   });
 
   // Academic Term state: '1st Term', '2nd Term', '3rd Term'
@@ -509,6 +509,8 @@ const IDModel = () => {
                     </p>
                   </div>
 
+                  <p className="absolute left-2 top-1/2 rotate-90 opacity-30">Fake ID</p>
+
                   {/* Background Seal Watermark */}
                   <img
                     src={vita_educationem}
@@ -552,6 +554,9 @@ const IDModel = () => {
                     <p className="text-yellow-300 font-extrabold text-sm sm:text-base tracking-wide uppercase">
                       STI {formData.branch || "Campus"}
                     </p>
+                    <p className=" text-transparent text-lg sm:text-xl font-black uppercase tracking-tight">
+                      College
+                    </p>
                   </div>
 
                   {/* Student Photo Frame */}
@@ -593,6 +598,7 @@ const IDModel = () => {
                     </p>
                   </div>
 
+                  <p className="absolute left-2 top-1/2 rotate-90 opacity-30">Fake ID</p>
                   {/* Background Seal Watermark */}
                   <img
                     src={vita_educationem}

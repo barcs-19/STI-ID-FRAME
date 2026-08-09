@@ -210,7 +210,6 @@ const IDModel = () => {
         {/* Drawer Header */}
         <div className="flex items-center justify-between p-4 border-b border-slate-800 bg-slate-950/50">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-yellow-400 animate-pulse" />
             <h2 className="font-bold text-lg text-white">ID Customization</h2>
           </div>
           <button
@@ -597,7 +596,7 @@ const IDModel = () => {
 
       {/* Footer Branding */}
       <footer className="border-t border-slate-800/80 py-4 px-4 text-center text-xs text-slate-500">
-        By STIers
+        By STIers for STIers
       </footer>
     </div>
   );

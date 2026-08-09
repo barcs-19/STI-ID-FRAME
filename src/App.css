@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .id-card-shadow {
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3), 0 10px 15px -5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.white-btn {
+  @apply bg-white text-gray-800 px-4 py-2 rounded-lg font-medium shadow-sm hover:bg-gray-100 transition-all duration-200 active:scale-95 cursor-pointer flex items-center justify-center gap-2 border border-gray-200;
+}
+
+.white-blue {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg font-medium shadow-md hover:bg-blue-700 transition-all duration-200 active:scale-95 cursor-pointer flex items-center justify-center gap-2;
+}
+
+.black-btn {
+  @apply bg-gray-900 text-white px-4 py-2 rounded-lg font-medium shadow-md hover:bg-gray-800 transition-all duration-200 active:scale-95 cursor-pointer flex items-center justify-center gap-2 border border-gray-800;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.7);
+}
+
+.home-bg {
+  background-color: #0f172a;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.5) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(234, 179, 8, 0.2) 0px, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 24px 24px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(var(--tw-rotate, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--tw-rotate, 0deg)); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 5s ease-in-out 1.5s infinite;
+}

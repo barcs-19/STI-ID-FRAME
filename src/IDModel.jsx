@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import stiLogo from "./assets/Systems_Technology_Institute.png";
 import vita_educationem from "./assets/STI-VITA-EDUCATIONEM.png";
@@ -35,15 +35,27 @@ const IDModel = () => {
   // Academic Term state: '1st Term', '2nd Term', '3rd Term'
   const [term, setTerm] = useState("1st Term");
 
+  // Attach stream to video elements after render (fixes white-screen bug)
+  useEffect(() => {
+    if (onCam && stream) {
+      if (videoRef1.current) videoRef1.current.srcObject = stream;
+      if (videoRef2.current) {
+        try {
+          videoRef2.current.srcObject = stream.clone();
+        } catch {
+          videoRef2.current.srcObject = stream;
+        }
+      }
+    }
+  }, [onCam, stream, viewMode]);
+
   const openCamera = async () => {
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { width: { ideal: 640 }, height: { ideal: 640 }, facingMode: "user" },
       });
       setStream(mediaStream);
-      if (videoRef1.current) videoRef1.current.srcObject = mediaStream;
-      if (videoRef2.current) videoRef2.current.srcObject = mediaStream.clone();
-      setOnCam(true);
+      setOnCam(true); // triggers useEffect to attach stream after re-render
     } catch (err) {
       console.error("Camera access error:", err);
       alert("Unable to access camera. Please check permissions.");
